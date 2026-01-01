@@ -1,5 +1,6 @@
 import './Logo.scss'
 import clsx from 'clsx'
+import getPath from '@/utils/getPath.js'
 
 export default (props) => {
   const { className, loading = 'lazy' } = props
@@ -15,7 +16,7 @@ export default (props) => {
     >
       <img
         className="logo__image"
-        src="/images/logo.svg"
+        src={getPath('/images/logo.svg')}
         alt=""
         width={200}
         height={68}
