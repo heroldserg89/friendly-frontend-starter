@@ -8,8 +8,8 @@ export default defineConfig({
   // Корень проекта (обычно не меняется)
   root: '',
 
-  // Базовый путь (если деплой не в корень сайта, поменяй)
-  base: '/',
+  // Базовый путь (автоматически берется из переменной окружения для GitHub Pages)
+  base: process.env.VITE_BASE_PATH || '/',
 
   // Папка с публичными файлами (копируются как есть)
   public: 'public',
@@ -24,7 +24,7 @@ export default defineConfig({
 
     // Картинки (оптимизируются и ресайзятся при сборке)
     images: {
-      outDir: 'assets/images',
+      outDir: 'images',
       outName: '[name]',
       remoteName: 'remote',
       optimize: {
@@ -44,7 +44,7 @@ export default defineConfig({
     // SVG-спрайт из папки с иконками
     icons: {
       srcDir: 'src/assets/icons',
-      outDir: 'assets/images',
+      outDir: 'images',
       outName: '[dirname]',
       svgstoreOptions: {
         // Удаляем fill/stroke из символов, чтобы управлять цветом через CSS
@@ -60,7 +60,7 @@ export default defineConfig({
 
     // Имя основного бандла
     bundle: {
-      outName: 'bundle',
+      outName: 'styles',
     },
   },
 
