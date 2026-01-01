@@ -1,5 +1,6 @@
 import './Header.scss'
 import clsx from 'clsx'
+import getPath from '@/utils/getPath.js'
 import Logo from '@/components/Logo'
 import Button from '@/components/Button'
 import BurgerButton from '@/components/BurgerButton'
@@ -36,7 +37,7 @@ export default (props) => {
                       'header__menu-link',
                       href === url && 'is-active'
                     )}
-                    href={href}
+                    href={getPath(href)}
                   >
                     {label}
                   </a>
